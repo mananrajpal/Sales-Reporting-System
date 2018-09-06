@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace phpsreps
 {
@@ -15,6 +16,18 @@ namespace phpsreps
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnect.Connect();
+            }
+            catch(Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
         }
     }
 }
