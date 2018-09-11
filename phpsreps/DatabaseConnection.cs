@@ -4,43 +4,27 @@ using System.Data.SqlClient;   // System.Data.dll
 
 namespace phpsreps
 {
-
     public static class DBConnect
     {
+        public static SqlConnection Session = new SqlConnection(Details());
 
-        public static void Connect()
+        /// <summary>
+        /// Hardcoded string details for connecting to the database. In roduction in would be necessary for these
+        /// details to be encrypted and not plain text for security.
+        /// </summary>
+        /// <returns>
+        /// Cnnection string for the database to open a session.
+        /// </returns>
+        private static string Details()
         {
-                var cb = new SqlConnectionStringBuilder();
-                cb.DataSource = "phpsreps.database.windows.net";
-                cb.UserID = "SwinDP2tu05g1";
-                cb.Password = "SwinDP2team";
-                cb.InitialCatalog = "phpsreps";
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "phpsreps.database.windows.net";
+            cb.UserID = "SwinDP2tu05g1";
+            cb.Password = "SwinDP2team"; // should not be plain text.
+            cb.InitialCatalog = "phpsreps";
 
-                using (var connection = new SqlConnection(cb.ConnectionString))
-                {
-                    connection.Open();
-
-                    /*
-                    Submit_Tsql_NonQuery(connection, "2 - Create-Tables",
-                       //Build_2_Tsql_CreateTables());
-
-                    Submit_Tsql_NonQuery(connection, "3 - Inserts",
-                       Build_3_Tsql_Inserts());
-
-                    Submit_Tsql_NonQuery(connection, "4 - Update-Join",
-                       Build_4_Tsql_UpdateJoin(),
-                       "@csharpParmDepartmentName", "Accounting");
-
-                    Submit_Tsql_NonQuery(connection, "5 - Delete-Join",
-                       Build_5_Tsql_DeleteJoin(),
-                       "@csharpParmDepartmentName", "Legal");
-
-                    */
-
-                    DBQueries.Submit_6_Tsql_SelectProducts(connection);
-
-                }
-            }
+            return cb.ConnectionString;
+        }
     }
 }
 

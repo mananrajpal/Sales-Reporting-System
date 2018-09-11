@@ -22,7 +22,7 @@ namespace phpsreps
         {
             try
             {
-                DBConnect.Connect();
+                //DBConnect.Connect();
             }
             catch(Exception es)
             {
