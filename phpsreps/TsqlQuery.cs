@@ -5,16 +5,15 @@ using System.Data.SqlClient;   // System.Data.dll
 
 namespace phpsreps
 {
-    public class DBQueries
-
+    public class TsqlQuery
     {
-        public static void Submit_6_Tsql_SelectProducts(SqlConnection connection)
+        private SqlConnection Connection { get => DBConnect.Session; }
+
+        public TsqlQuery(string tsqlPurpose, string tsqlSourceCode)
         {
-            MessageBox.Show("SELECT PRODUCTS...");
+            //MessageBox.Show(tsqlPurpose);
 
-            string tsql = Build_6_Tsql_SelectProducts();
-
-            using (var command = new SqlCommand(tsql, connection))
+            using (var command = new SqlCommand(tsqlSourceCode, Connection))
             {
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
