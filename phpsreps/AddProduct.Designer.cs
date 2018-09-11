@@ -120,7 +120,7 @@
             // 
             this.product_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_code.Location = new System.Drawing.Point(390, 66);
-            this.product_code.MaxLength = 5;
+            this.product_code.MaxLength = 8;
             this.product_code.Name = "product_code";
             this.product_code.Size = new System.Drawing.Size(185, 26);
             this.product_code.TabIndex = 7;
@@ -129,6 +129,7 @@
             // 
             this.category_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.category_code.Location = new System.Drawing.Point(390, 107);
+            this.category_code.MaxLength = 10;
             this.category_code.Name = "category_code";
             this.category_code.Size = new System.Drawing.Size(185, 26);
             this.category_code.TabIndex = 8;
@@ -137,6 +138,7 @@
             // 
             this.product_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_name.Location = new System.Drawing.Point(390, 148);
+            this.product_name.MaxLength = 30;
             this.product_name.Name = "product_name";
             this.product_name.Size = new System.Drawing.Size(185, 26);
             this.product_name.TabIndex = 9;
@@ -145,6 +147,7 @@
             // 
             this.company_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.company_id.Location = new System.Drawing.Point(390, 191);
+            this.company_id.MaxLength = 8;
             this.company_id.Name = "company_id";
             this.company_id.Size = new System.Drawing.Size(185, 26);
             this.company_id.TabIndex = 10;
@@ -153,6 +156,7 @@
             // 
             this.cost_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cost_price.Location = new System.Drawing.Point(390, 239);
+            this.cost_price.MaxLength = 6;
             this.cost_price.Name = "cost_price";
             this.cost_price.Size = new System.Drawing.Size(185, 26);
             this.cost_price.TabIndex = 11;
@@ -161,6 +165,7 @@
             // 
             this.retail_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retail_price.Location = new System.Drawing.Point(390, 283);
+            this.retail_price.MaxLength = 6;
             this.retail_price.Name = "retail_price";
             this.retail_price.Size = new System.Drawing.Size(185, 26);
             this.retail_price.TabIndex = 12;
@@ -169,6 +174,7 @@
             // 
             this.in_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.in_stock.Location = new System.Drawing.Point(390, 334);
+            this.in_stock.MaxLength = 30000;
             this.in_stock.Name = "in_stock";
             this.in_stock.Size = new System.Drawing.Size(185, 26);
             this.in_stock.TabIndex = 13;
