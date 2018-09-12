@@ -16,6 +16,7 @@ namespace phpsreps
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -29,5 +30,17 @@ namespace phpsreps
                 MessageBox.Show(es.Message);
             }
         }
-    }
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			this.Hide();
+			Form2 form2 = new Form2();
+			form2.Show();
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
