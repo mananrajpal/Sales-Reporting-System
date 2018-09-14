@@ -23,9 +23,9 @@ namespace phpsreps
 
             //ProductList.UpdateProducts();
 
-            long time1 = DateTime.Now.Ticks;
-            MessageBox.Show(time1.ToString());
-            //Application.Run(new Form1()); // run the main program form.
+            //long time1 = DateTime.Now.Ticks;
+            //MessageBox.Show(time1.ToString());
+            Application.Run(new Form1()); // run the main program form.
 
 
 
