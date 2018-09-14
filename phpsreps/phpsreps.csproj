@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company.cs" />
+    <Compile Include="CompanyList.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductList.cs" />
     <Compile Include="TsqlQuery.cs" />
     <Compile Include="NewItemLine.cs" />
     <Compile Include="NewSale.cs" />
