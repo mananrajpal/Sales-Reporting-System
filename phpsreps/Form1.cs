@@ -34,7 +34,7 @@ namespace phpsreps
 		private void button1_Click_1(object sender, EventArgs e)
 		{
 			this.Hide();
-			Form2 form2 = new Form2();
+			Form1 form2 = new Form1();
 			form2.Show();
 		}
 
