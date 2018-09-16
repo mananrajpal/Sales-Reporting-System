@@ -3,14 +3,14 @@ using System.Text;
 
 namespace phpsreps
 {
-    enum Category
+    public enum Category
     {
         FirstAid,
         Medicines,
         Beauty,
     }
 
-    class Product
+    public class Product
     {
         public string ProductCode { get; set; }
         public Category Cat { get; set; }
@@ -28,6 +28,8 @@ namespace phpsreps
             {
                 //ToDo : break and send warning...
             }
+
+            Cat = outcat;
 
             ProductName = pName;
             CompanyID = compID;
