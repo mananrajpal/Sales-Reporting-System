@@ -117,7 +117,11 @@ namespace phpsreps
             if (validation() == true)
             {
                 errorprovider.Clear();
+                //initialize local variables
                 InitializeVariable();
+                
+                //Process the data to the database
+
             }
             else
             {
