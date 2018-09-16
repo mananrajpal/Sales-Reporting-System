@@ -19,7 +19,6 @@ namespace phpsreps
         public AddProduct()
         {
             InitializeComponent();
-            InitializeVariable();
         }
 
         public void InitializeVariable()
@@ -33,11 +32,24 @@ namespace phpsreps
             in_stock = Int32.Parse(in_stockTextBox.Text);
         }
 
-
+        private Boolean Validate()
+        {
+            
+            return true;
+        }
 
         private void submit_Click(object sender, EventArgs e)
         {
             //check the validation first
+            bool check = Validate();
+            if (check == true)
+            {
+                InitializeVariable();
+            }
+            else
+            {
+
+            }
             //if everything is right than proceed to connecting with database
             //submit the details to the server
         }
