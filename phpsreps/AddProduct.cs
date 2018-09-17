@@ -13,11 +13,11 @@ namespace phpsreps
 {
     public partial class AddProduct : Form
     {
-        private String product_code, category_code, product_name, company_id;
-        private double cost_price, retail_price;
-        private int in_stock;
+        private String product_code, category_code, product_name,
+            company_id, cost_price, retail_price, in_stock;
         private ErrorProvider errorprovider;
         private String _regexfordecimal, _regexforstock;
+        private Product product;
 
         public AddProduct()
         {
@@ -44,9 +44,9 @@ namespace phpsreps
             category_code = category_codeTextBox.Text;
             product_name = product_nameTextBox.Text;
             company_id = company_idTextBox.Text;
-            cost_price = Double.Parse(cost_priceTextBox.Text);
-            retail_price = Double.Parse(retail_priceTextBox.Text);
-            in_stock = Int32.Parse(in_stockTextBox.Text);
+            cost_price = cost_priceTextBox.Text;
+            retail_price = retail_priceTextBox.Text;
+            in_stock = in_stockTextBox.Text;
         }
 
         private Boolean validation()
@@ -105,10 +105,34 @@ namespace phpsreps
                 errorprovider.SetError(in_stockTextBox, MessageBox.Show("Stock Count can only be positive", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
             }
+            else if (!(category_codeTextBox.Text.Equals(Category.Beauty)) || !(category_codeTextBox.Text.Equals(Category.FirstAid)) || !(category_codeTextBox.Text.Equals(Category.Medicines)))
+            {
+                category_codeTextBox.Focus();
+                errorprovider.SetError(category_codeTextBox, MessageBox.Show("Category can only be Beauty, FirstAid or Medicines", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                return false;
+            }
+            else if (CheckCompanyCode() == false)
+            {
+                company_idTextBox.Focus();
+                errorprovider.SetError(company_idTextBox, MessageBox.Show("The Company Id entered does not pre-exist, please enter that company details first or correct the company id","Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                return false;
+            }
             else
             {
                 return true;
             }
+        }
+
+        private Boolean CheckCompanyCode()
+        {
+            for (int i = 0; i < CompanyList.companies.Count; i++)
+            {
+                if (CompanyList.companies[i].CompanyID.Equals(company_idTextBox.Text))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void submit_Click(object sender, EventArgs e)
@@ -119,7 +143,8 @@ namespace phpsreps
                 errorprovider.Clear();
                 //initialize local variables
                 InitializeVariable();
-                
+                product = new Product(product_code, category_code, product_name, company_id, cost_price, retail_price, in_stock);
+                product.InsertProduct();
                 //Process the data to the database
 
             }
