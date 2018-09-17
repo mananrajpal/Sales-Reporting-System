@@ -20,7 +20,9 @@ namespace phpsreps
             Application.SetCompatibleTextRenderingDefault(false);
 
             //DBConnect.Session.Open();
-            
+
+            //ProductList.UpdateProducts();
+            //CompanyList.UpdateCompanies();
 
             //long time1 = DateTime.Now.Ticks;
             //MessageBox.Show(time1.ToString());

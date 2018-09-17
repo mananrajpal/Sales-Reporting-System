@@ -25,9 +25,9 @@ namespace phpsreps
         /// <summary>
         /// Adds an item line to the sale.
         /// </summary>
-        public void NewItem()
+        public void NewItem(string pCode, string pName, string qty, string iCost)
         {
-            items.Add(new NewItemLine());
+            items.Add(new NewItemLine(pCode, pName, qty, iCost));
         }
 
         /// <summary>
