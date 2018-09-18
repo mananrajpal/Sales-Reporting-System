@@ -63,8 +63,8 @@ namespace phpsreps
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.phpsrepsDataSet = new phpsreps.phpsrepsDataSet();
 			this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.phpsrepsDataSet = new phpsreps.phpsrepsDataSet();
 			this.productsTableAdapter = new phpsreps.phpsrepsDataSetTableAdapters.productsTableAdapter();
 			this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +75,8 @@ namespace phpsreps
 			this.inStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -96,6 +96,7 @@ namespace phpsreps
 			this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
 			this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
 			this.inventoryToolStripMenuItem.Text = "Inventory";
+			this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
@@ -123,7 +124,7 @@ namespace phpsreps
 			// 
 			this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.button1.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(167, 118);
+			this.button1.Location = new System.Drawing.Point(165, 97);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(100, 28);
 			this.button1.TabIndex = 3;
@@ -134,7 +135,7 @@ namespace phpsreps
 			// 
 			this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.button2.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(373, 118);
+			this.button2.Location = new System.Drawing.Point(373, 97);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(100, 28);
 			this.button2.TabIndex = 4;
@@ -145,7 +146,7 @@ namespace phpsreps
 			// 
 			this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.button3.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Location = new System.Drawing.Point(573, 118);
+			this.button3.Location = new System.Drawing.Point(573, 97);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(100, 28);
 			this.button3.TabIndex = 5;
@@ -172,15 +173,15 @@ namespace phpsreps
 			this.dataGridView1.Size = new System.Drawing.Size(743, 338);
 			this.dataGridView1.TabIndex = 1;
 			// 
-			// phpsrepsDataSet
-			// 
-			this.phpsrepsDataSet.DataSetName = "phpsrepsDataSet";
-			this.phpsrepsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// productsBindingSource
 			// 
 			this.productsBindingSource.DataMember = "products";
 			this.productsBindingSource.DataSource = this.phpsrepsDataSet;
+			// 
+			// phpsrepsDataSet
+			// 
+			this.phpsrepsDataSet.DataSetName = "phpsrepsDataSet";
+			this.phpsrepsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// productsTableAdapter
 			// 
@@ -238,6 +239,7 @@ namespace phpsreps
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.menuStrip1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form2";
 			this.Text = "PHP-SRePS";
@@ -245,8 +247,8 @@ namespace phpsreps
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -254,9 +256,14 @@ namespace phpsreps
 
 		private void Form2_Load_1(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'phpsrepsDataSet.products' table. You can move, or remove it, as needed.
+			//This line of code loads data into the 'phpsrepsDataSet.products' table
 			this.productsTableAdapter.Fill(this.phpsrepsDataSet.products);
 
+		}
+
+		private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Show();
 		}
 	}
 }
