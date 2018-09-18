@@ -51,10 +51,21 @@
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="phpsrepsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phpsrepsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductList.cs" />
@@ -76,6 +87,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,6 +109,17 @@
     </None>
     <None Include="phpsrepsDataSet.xss">
       <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phpsrepsDataSet1.xsc">
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="phpsrepsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phpsrepsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phpsrepsDataSet1.xss">
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -63,9 +63,6 @@ namespace phpsreps
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.phpsrepsDataSet = new phpsreps.phpsrepsDataSet();
-			this.productsTableAdapter = new phpsreps.phpsrepsDataSetTableAdapters.productsTableAdapter();
 			this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +70,9 @@ namespace phpsreps
 			this.costPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.retailPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.inStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.phpsrepsDataSet = new phpsreps.phpsrepsDataSet();
+			this.productsTableAdapter = new phpsreps.phpsrepsDataSetTableAdapters.productsTableAdapter();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -103,6 +103,7 @@ namespace phpsreps
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
 			this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
 			this.salesToolStripMenuItem.Text = "Sales";
+			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
 			// 
 			// reportsToolStripMenuItem
 			// 
@@ -173,20 +174,6 @@ namespace phpsreps
 			this.dataGridView1.Size = new System.Drawing.Size(743, 338);
 			this.dataGridView1.TabIndex = 1;
 			// 
-			// productsBindingSource
-			// 
-			this.productsBindingSource.DataMember = "products";
-			this.productsBindingSource.DataSource = this.phpsrepsDataSet;
-			// 
-			// phpsrepsDataSet
-			// 
-			this.phpsrepsDataSet.DataSetName = "phpsrepsDataSet";
-			this.phpsrepsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// productsTableAdapter
-			// 
-			this.productsTableAdapter.ClearBeforeFill = true;
-			// 
 			// productCodeDataGridViewTextBoxColumn
 			// 
 			this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "Product_Code";
@@ -229,6 +216,20 @@ namespace phpsreps
 			this.inStockDataGridViewTextBoxColumn.HeaderText = "InStock";
 			this.inStockDataGridViewTextBoxColumn.Name = "inStockDataGridViewTextBoxColumn";
 			// 
+			// productsBindingSource
+			// 
+			this.productsBindingSource.DataMember = "products";
+			this.productsBindingSource.DataSource = this.phpsrepsDataSet;
+			// 
+			// phpsrepsDataSet
+			// 
+			this.phpsrepsDataSet.DataSetName = "phpsrepsDataSet";
+			this.phpsrepsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// productsTableAdapter
+			// 
+			this.productsTableAdapter.ClearBeforeFill = true;
+			// 
 			// Form2
 			// 
 			this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -264,6 +265,13 @@ namespace phpsreps
 		private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			this.Show();
+		}
+
+		private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Form3 form3 = new Form3();
+			form3.Show();
 		}
 	}
 }
