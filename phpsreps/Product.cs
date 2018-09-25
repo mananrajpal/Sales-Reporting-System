@@ -8,6 +8,8 @@ namespace phpsreps
         FirstAid,
         Medicines,
         Beauty,
+        PersonalCare,
+        Supplements
     }
 
     public class Product
@@ -114,6 +116,11 @@ namespace phpsreps
             return sqlUpdate.ToString();
         }
         #endregion
+
+        public void DeleteProduct()
+        {
+
+        }
 
     }
 }

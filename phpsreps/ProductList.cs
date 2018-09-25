@@ -44,5 +44,17 @@ namespace phpsreps
 
             return tSqlQueryString.ToString();
         }
+
+        // method to lookup a pass code.
+        public static Product SearchForPorduct(string pCode)
+        {
+            foreach (Product p in products)
+            {
+                if (p.ProductCode == pCode)
+                { return p; }
+            }
+
+            return null; //Should this return empty?
+        }
     }
 }
