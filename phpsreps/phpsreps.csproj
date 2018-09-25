@@ -47,7 +47,36 @@
   <ItemGroup>
     <Compile Include="Company.cs" />
     <Compile Include="CompanyList.cs" />
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="editProduct.cs" />
+    <Compile Include="editProduct.designer.cs">
+      <DependentUpon>editProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phpsrepsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phpsrepsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductList.cs" />
     <Compile Include="TsqlQuery.cs" />
@@ -62,8 +91,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TsqlNonQuery.cs" />
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm.resx">
+      <DependentUpon>PopupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +115,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="phpsrepsDataSet.xsc">
+      <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phpsrepsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phpsrepsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phpsrepsDataSet.xss">
+      <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phpsrepsDataSet1.xsc">
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="phpsrepsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phpsrepsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phpsrepsDataSet1.xss">
+      <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
