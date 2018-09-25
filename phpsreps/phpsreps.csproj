@@ -91,13 +91,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TsqlNonQuery.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="editProduct.resx">
-      <DependentUpon>editProduct.cs</DependentUpon>
-=======
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
->>>>>>> d870f7c6d8d53f18b7a423a754e497cfb1391ca1
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
