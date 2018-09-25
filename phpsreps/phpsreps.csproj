@@ -48,6 +48,10 @@
     <Compile Include="Company.cs" />
     <Compile Include="CompanyList.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="editProduct.cs" />
+    <Compile Include="editProduct.designer.cs">
+      <DependentUpon>editProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +85,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TsqlNonQuery.cs" />
+    <EmbeddedResource Include="editProduct.resx">
+      <DependentUpon>editProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
