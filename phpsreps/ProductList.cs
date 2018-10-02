@@ -56,5 +56,51 @@ namespace phpsreps
 
             return null; //Should this return empty?
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        public static List<SaleLine> GetProductSales(string product)
+        {
+            TsqlQuery query = new TsqlQuery("Get Products by SaleID", QuerySaleItemsString(product));
+            List<SaleLine> productSales = new List<SaleLine>();
+
+            SqlDataReader reader = query.Command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                SaleLine s = new SaleLine(
+                    reader.GetString(0),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3));
+
+                productSales.Add(s);
+
+            }
+
+            return productSales;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        private static string QuerySaleItemsString(string product)
+        {
+            StringBuilder saleItemQuery = new StringBuilder();
+
+            saleItemQuery.AppendFormat(@"
+                -- new sales line
+                SELECT 'Product_ID','Sale_ID', 'Qty_Sold', 'Total_Cost' FROM dbo.sale_items
+                ORDER BY Sale_ID
+                WHERE Product_ID = '{1}';
+                ", product);
+
+            return saleItemQuery.ToString();
+        }
     }
 }
