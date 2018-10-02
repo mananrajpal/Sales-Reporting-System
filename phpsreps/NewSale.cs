@@ -12,11 +12,11 @@ namespace phpsreps
 
     public class Sale
     {
-        private long saleIDStamp; // DB Primary Key.
-        private List<NewItemLine> items;
-        private float saleTotal = 0f;
+        public long saleIDStamp; // DB Primary Key.
+        public List<NewItemLine> items;
+        public float saleTotal = 0f;
 
-        private Sale()
+        public Sale()
         {
             saleIDStamp = DateTime.Now.Ticks;
             items = new List<NewItemLine>();
