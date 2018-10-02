@@ -42,7 +42,7 @@ namespace phpsreps
         private Boolean CheckForValidation()
         {
             //check if the field is not empty
-            if (ProductId.Text.Length == 0)
+            /*if (ProductId.Text.Length == 0)
             {
                 ProductId.Focus();
                 error.SetError(ProductId, MessageBox.Show("Please enter the Product Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
@@ -53,7 +53,7 @@ namespace phpsreps
                 ProductId.Focus();
                 error.SetError(ProductId, MessageBox.Show("Product id entered does not match the database ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
-            }
+            }*/
             return true;
         }
 
@@ -62,6 +62,10 @@ namespace phpsreps
             if (CheckForValidation() == true)
             {
                 //proceed to getting sales record for the product id
+                this.Hide();
+                SalesOutput ss = new SalesOutput();
+                ss.Closed += (s, args) => this.Close();
+                ss.Show();
             }
             else
             {

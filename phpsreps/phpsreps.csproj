@@ -85,6 +85,12 @@
     <Compile Include="SalesForAProduct.Designer.cs">
       <DependentUpon>SalesForAProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOutput.Designer.cs">
+      <DependentUpon>SalesOutput.cs</DependentUpon>
+    </Compile>
     <Compile Include="TsqlQuery.cs" />
     <Compile Include="NewItemLine.cs" />
     <Compile Include="NewSale.cs" />
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="SalesForAProduct.resx">
       <DependentUpon>SalesForAProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesOutput.resx">
+      <DependentUpon>SalesOutput.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="phpsrepsDataSet.xsc">
       <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
