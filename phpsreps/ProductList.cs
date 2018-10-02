@@ -62,16 +62,16 @@ namespace phpsreps
         /// </summary>
         /// <param name="product"></param>
         /// <returns></returns>
-        public static List<SaleLine> GetProductSales(string product)
+        public static List<NewItemLine> GetProductSales(string product)
         {
             TsqlQuery query = new TsqlQuery("Get Products by SaleID", QuerySaleItemsString(product));
-            List<SaleLine> productSales = new List<SaleLine>();
+            List<NewItemLine> productSales = new List<NewItemLine>();
 
             SqlDataReader reader = query.Command.ExecuteReader();
 
             while (reader.Read())
             {
-                SaleLine s = new SaleLine(
+                NewItemLine s = new NewItemLine(
                     reader.GetString(0),
                     reader.GetString(1),
                     reader.GetString(2),

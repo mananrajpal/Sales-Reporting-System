@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductList.cs" />
-    <Compile Include="SaleLine.cs" />
     <Compile Include="TsqlQuery.cs" />
     <Compile Include="NewItemLine.cs" />
     <Compile Include="NewSale.cs" />
