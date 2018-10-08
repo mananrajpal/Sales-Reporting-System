@@ -13,24 +13,24 @@ namespace phpsreps
     public partial class SalesForAProduct : Form
     {
         ErrorProvider error;
+        String _productid;
 
         public SalesForAProduct()
         {
             InitializeComponent();
-            error = new ErrorProvider();
-            InitializeTextFields();   
+            error = new ErrorProvider();   
         }
 
         private void InitializeTextFields()
         {
-
+            _productid = ProductId.Text.ToString();
         }
 
         private Boolean CheckForProductCode()
         {
             for (int i = 0; i < ProductList.products.Count; i++)
             {
-                if (ProductList.products[i].ProductCode.Equals(ProductId))
+                if (ProductList.products[i].ProductCode.Equals(ProductId.Text.ToString()))
                 {
                     return true;
                 }
@@ -63,7 +63,9 @@ namespace phpsreps
             {
                 //proceed to getting sales record for the product id
                 this.Hide();
-                SalesOutput ss = new SalesOutput();
+                InitializeTextFields();
+                List<List<string>> salesrecord = ProductList.GetProductSales(_productid);
+                SalesOutput ss = new SalesOutput(salesrecord);
                 ss.Closed += (s, args) => this.Close();
                 ss.Show();
             }
