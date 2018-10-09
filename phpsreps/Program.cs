@@ -19,10 +19,14 @@ namespace phpsreps
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //DBConnect.Session.Open();
+            DBConnect.Session.Open();
 
             //ProductList.UpdateProducts();
             //CompanyList.UpdateCompanies();
+
+            DataExport.ExportProducts();
+            DataExport.ExportCompanies();
+            DataExport.ExportSales("2010-10-10", "2018-10-10");
 
             //long time1 = DateTime.Now.Ticks;
             //MessageBox.Show(time1.ToString());
