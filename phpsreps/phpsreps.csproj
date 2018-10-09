@@ -54,6 +54,7 @@
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DataExport.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

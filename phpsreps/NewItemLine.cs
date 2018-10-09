@@ -4,7 +4,7 @@ using System.Text;
 
 namespace phpsreps
 {
-    class NewItemLine
+    public class NewItemLine
     {
         public string ProductCode { get; }
         public string ProductName { get; set; }
