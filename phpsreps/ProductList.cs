@@ -77,9 +77,9 @@ namespace phpsreps
             while (reader.Read())
             {
                 string p = reader.GetString(0);
-                string s = reader.GetString(1);
-                string q = reader.GetString(2);
-                string tc = reader.GetString(3);
+                string s = reader.GetInt32(1).ToString();
+                string q = reader.GetInt16(2).ToString();
+                string tc = reader.GetDecimal(3).ToString();
 
                 List<string> line = new List<string>();
 
