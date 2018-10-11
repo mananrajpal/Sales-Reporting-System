@@ -105,9 +105,9 @@ namespace phpsreps
 
             saleItemQuery.AppendFormat(@"
                 -- new sales line
-                SELECT 'Product_ID','Sale_ID', 'Qty_Sold', 'Total_Cost' FROM dbo.sale_items
-                ORDER BY Sale_ID
-                WHERE Product_ID = '{0}';
+                SELECT s.Product_ID, s.Sale_ID, s.Qty_Sold, s.Total_Cost FROM dbo.sale_items s
+                ORDER BY s.Sale_ID
+                WHERE s.Product_ID = '{0}';
                 ", product);
 
             return saleItemQuery.ToString();
