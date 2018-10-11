@@ -159,7 +159,7 @@ namespace phpsreps
                 product = new Product(product_code, category_code, product_name, company_id, cost_price, retail_price, in_stock);
                 product.InsertProduct();
                 //Process the data to the database
-
+                MessageBox.Show("Product Created Successfully");
             }
             else
             {
