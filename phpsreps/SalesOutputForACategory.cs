@@ -12,50 +12,29 @@ namespace phpsreps
 {
     public partial class SalesOutputForACategory : Form
     {
-        private ErrorProvider error;
-
-        public SalesOutputForACategory()
+        private List<List<String>> _salesrecord;
+        public SalesOutputForACategory(List<List<String>> salesrecord)
         {
+            _salesrecord = salesrecord;
+            SetDataGridRecord();
             InitializeComponent();
-            error = new ErrorProvider();
         }
 
-        private bool CheckForCategoryName()
+        private void SetDataGridRecord()
         {
-            if (!(category_name.Text.Equals(Category.Beauty) || category_name.Text.Equals(Category.FirstAid) || category_name.Text.Equals(Category.Medicines) || category_name.Text.Equals(Category.PersonalCare) || category_name.Text.Equals(Category.Supplements)))
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Product Id");
+            dt.Columns.Add("Sales Id");
+            dt.Columns.Add("Quantity");
+            dt.Columns.Add("Total Cost");
+
+            for (int i = 0; i < _salesrecord.Count; i++)
             {
-                return false;
+                dt.Rows.Add(_salesrecord[i][0], _salesrecord[i][1], _salesrecord[i][2], _salesrecord[i][3]);
             }
-            return true;
+            gridView.DataSource = dt;
         }
 
-        private bool ValidateField()
-        {
-            if (category_name.Text.Length == 0)
-            {
-                category_name.Focus();
-                error.SetError(category_name, MessageBox.Show("Please enter the Category Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                return false;
-            }
-            else if (CheckForCategoryName() == false)
-            {
-                category_name.Focus();
-                error.SetError(category_name, MessageBox.Show("Categories can only be FirstAid or Medicines or PersonalCare or Supplements.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                return false;
-            }
-            return true;
-        }
 
-        private void submit_button_Click(object sender, EventArgs e)
-        {
-            if (ValidateField() == true)
-            {
-                //Call the code for the category list to be populated depending upon the category name
-            }
-            else
-            {
-                //do nothing
-            }
-        }
-    }  
+    }
 }

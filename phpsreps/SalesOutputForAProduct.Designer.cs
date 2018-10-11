@@ -30,9 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.gridView = new System.Windows.Forms.DataGridView();
-            this.Product_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,35 +49,12 @@
             this.gridView.AllowUserToDeleteRows = false;
             this.gridView.BackgroundColor = System.Drawing.SystemColors.Info;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Product_Id,
-            this.Product_Name,
-            this.Sales});
             this.gridView.Location = new System.Drawing.Point(218, 91);
             this.gridView.Name = "gridView";
             this.gridView.ReadOnly = true;
             this.gridView.RowTemplate.Height = 24;
             this.gridView.Size = new System.Drawing.Size(345, 310);
             this.gridView.TabIndex = 1;
-            
-            // 
-            // Product_Id
-            // 
-            this.Product_Id.HeaderText = "Product Id";
-            this.Product_Id.Name = "Product_Id";
-            this.Product_Id.ReadOnly = true;
-            // 
-            // Product_Name
-            // 
-            this.Product_Name.HeaderText = "Product Name";
-            this.Product_Name.Name = "Product_Name";
-            this.Product_Name.ReadOnly = true;
-            // 
-            // Sales
-            // 
-            this.Sales.HeaderText = "Sales";
-            this.Sales.Name = "Sales";
-            this.Sales.ReadOnly = true;
             // 
             // SalesOutputForAProduct
             // 
@@ -101,8 +75,5 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sales;
     }
 }

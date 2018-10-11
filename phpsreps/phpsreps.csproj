@@ -85,6 +85,12 @@
     <Compile Include="SalesForAProduct.Designer.cs">
       <DependentUpon>SalesForAProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesForACategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesForACategory.Designer.cs">
+      <DependentUpon>SalesForACategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesOutputForACategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="SalesForAProduct.resx">
       <DependentUpon>SalesForAProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesForACategory.resx">
+      <DependentUpon>SalesForACategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesOutputForACategory.resx">
       <DependentUpon>SalesOutputForACategory.cs</DependentUpon>
