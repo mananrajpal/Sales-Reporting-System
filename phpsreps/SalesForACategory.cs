@@ -22,7 +22,7 @@ namespace phpsreps
 
         private bool CheckForCategoryName()
         {
-            if (!(category_name.Text.Equals(Category.Beauty) || category_name.Text.Equals(Category.FirstAid) || category_name.Text.Equals(Category.Medicines) || category_name.Text.Equals(Category.PersonalCare) || category_name.Text.Equals(Category.Supplements)))
+            if (!(category_name.Text.Equals(Category.Beauty.ToString()) || category_name.Text.Equals(Category.FirstAid.ToString()) || category_name.Text.Equals(Category.Medicines.ToString()) || category_name.Text.Equals(Category.PersonalCare.ToString()) || category_name.Text.Equals(Category.Supplements.ToString())))
             {
                 return false;
             }
@@ -51,6 +51,11 @@ namespace phpsreps
             if (ValidateField() == true)
             {
                 //Call the code for the category list to be populated depending upon the category name
+                this.Hide();
+                List<List<string>> salesrecord = ProductList.GetItemisedCategorySales(category_name.Text);
+                SalesOutputForACategory ss = new SalesOutputForACategory(salesrecord);
+                ss.Closed += (s, args) => this.Close();
+                ss.Show();
             }
             else
             {
