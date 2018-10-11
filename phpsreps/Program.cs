@@ -30,10 +30,9 @@ namespace phpsreps
 
             //long time1 = DateTime.Now.Ticks;
             //MessageBox.Show(time1.ToString());
-            Application.Run(new SalesForAProduct()); // run the main program form.
-            //Application.Run(new Form1()); // run the main program form.
+            //Application.Run(new SalesForAProduct()); // run the main program form.
+            Application.Run(new Form1()); // run the main program form.
             //Application.Run(new SalesForACategory());
-
 
 
 

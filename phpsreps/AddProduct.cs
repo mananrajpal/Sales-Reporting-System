@@ -57,6 +57,12 @@ namespace phpsreps
                 errorprovider.SetError(product_codeTextBox, MessageBox.Show("Please enter the Product Code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
             }
+            else if (product_nameTextBox.Text.Length == 0)
+            {
+                product_nameTextBox.Focus();
+                errorprovider.SetError(product_nameTextBox, MessageBox.Show("Please enter the Product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                return false;
+            }
             else if (category_codeTextBox.Text.Length == 0)
             {
                 category_codeTextBox.Focus();
@@ -117,6 +123,12 @@ namespace phpsreps
                 errorprovider.SetError(company_idTextBox, MessageBox.Show("The Company Id entered does not pre-exist, please enter that company details first or correct the company id","Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
             }
+            else if (product_nameTextBox.Text.Contains(" "))
+            {
+                product_nameTextBox.Focus();
+                errorprovider.SetError(product_nameTextBox, MessageBox.Show("Please replace spaces in Product Name with '_'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                return false;
+            }
             else
             {
                 return true;
@@ -127,8 +139,7 @@ namespace phpsreps
         {
             
             for (int i = 0; i < CompanyList.companies.Count; i++)
-            {
-                Console.WriteLine(CompanyList.companies[i].CompanyID.ToString() + " " +  company_idTextBox.Text);
+            { 
                 if (CompanyList.companies[i].CompanyID.Trim().ToString().Equals(company_idTextBox.Text.ToString()))
                 {
                     return true;
