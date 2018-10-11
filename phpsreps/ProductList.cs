@@ -129,9 +129,9 @@ namespace phpsreps
             {
                 string p = reader.GetString(0);
                 string c = reader.GetString(1);
-                string s = reader.GetString(2);
-                string q = reader.GetString(3);
-                string tc = reader.GetString(4);
+                string s = reader.GetInt32(2).ToString();
+                string q = reader.GetInt16(3).ToString();
+                string tc = reader.GetDecimal(4).ToString();
 
                 List<string> line = new List<string>();
 
@@ -199,7 +199,7 @@ namespace phpsreps
                 if (category != null)
                 {
                     saleItemQuery.AppendFormat(@"
-                    WHERE p.Category = {0}
+                    WHERE p.Category = '{0}'
                     ", category);
                 }
 
