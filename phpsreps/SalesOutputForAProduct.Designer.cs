@@ -1,6 +1,6 @@
 ﻿namespace phpsreps
 {
-    partial class SalesOutput
+    partial class SalesOutputForAProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -62,6 +62,7 @@
             this.gridView.RowTemplate.Height = 24;
             this.gridView.Size = new System.Drawing.Size(345, 310);
             this.gridView.TabIndex = 1;
+            
             // 
             // Product_Id
             // 
@@ -81,15 +82,15 @@
             this.Sales.Name = "Sales";
             this.Sales.ReadOnly = true;
             // 
-            // SalesOutput
+            // SalesOutputForAProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gridView);
             this.Controls.Add(this.label1);
-            this.Name = "SalesOutput";
-            this.Text = "SalesOutput";
+            this.Name = "SalesOutputForAProduct";
+            this.Text = "SalesOutputForAProduct";
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

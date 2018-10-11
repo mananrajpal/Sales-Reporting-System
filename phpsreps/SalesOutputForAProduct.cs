@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace phpsreps
 {
-    public partial class SalesOutput : Form
+    public partial class SalesOutputForAProduct : Form
     {
-        private List<List<String>> _salesrecord;
-        private String _productid, _salesid, _quantity, _totalcost;
-        public SalesOutput(List<List<String>> salesrecord)
+        private List<List<String>> _salesrecord;   
+
+        public SalesOutputForAProduct(List<List<String>> salesrecord)
         {
-            InitializeComponent();
             _salesrecord = salesrecord;
+            SetDataGridRecord();
+            InitializeComponent();
         }
 
-        private void SetDataGridRecrod()
+        private void SetDataGridRecord()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Product Id");

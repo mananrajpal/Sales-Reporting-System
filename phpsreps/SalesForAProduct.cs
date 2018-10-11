@@ -42,7 +42,7 @@ namespace phpsreps
         private Boolean CheckForValidation()
         {
             //check if the field is not empty
-            /*if (ProductId.Text.Length == 0)
+            if (ProductId.Text.Length == 0)
             {
                 ProductId.Focus();
                 error.SetError(ProductId, MessageBox.Show("Please enter the Product Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
@@ -53,7 +53,7 @@ namespace phpsreps
                 ProductId.Focus();
                 error.SetError(ProductId, MessageBox.Show("Product id entered does not match the database ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
-            }*/
+            }
             return true;
         }
 
@@ -65,7 +65,7 @@ namespace phpsreps
                 this.Hide();
                 InitializeTextFields();
                 List<List<string>> salesrecord = ProductList.GetProductSales(_productid);
-                SalesOutput ss = new SalesOutput(salesrecord);
+                SalesOutputForAProduct ss = new SalesOutputForAProduct(salesrecord);
                 ss.Closed += (s, args) => this.Close();
                 ss.Show();
             }
