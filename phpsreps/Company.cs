@@ -34,7 +34,7 @@ namespace phpsreps
             sqlInsert.AppendFormat(@"
             -- Insert a new company to the DB
             INSERT INTO dbo.companies(ID, Company_Name, Address, Tel)
-            VALUES ({0}, {1}, {2}, {3});
+            VALUES ('{0}', '{1}', '{2}', '{3}');
             ", CompanyID, CompanyName, Address, Tel);
 
             return sqlInsert.ToString();

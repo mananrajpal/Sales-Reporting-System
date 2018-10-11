@@ -77,7 +77,7 @@ namespace phpsreps
             sqlInsert.AppendFormat(@"
             -- Insert a new porduct to the DB
             INSERT INTO dbo.products(Product_Code, Category, Product_Name, Company_ID, Cost_Price, Retail_Price, InStock)
-            VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6});
+            VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5}, {6});
             ", ProductCode, Cat, ProductName, CompanyID, CostPrice, RetailPrice, StockLevel);
 
             return sqlInsert.ToString();
