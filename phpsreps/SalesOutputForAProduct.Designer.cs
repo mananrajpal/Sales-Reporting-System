@@ -49,11 +49,11 @@
             this.gridView.AllowUserToDeleteRows = false;
             this.gridView.BackgroundColor = System.Drawing.SystemColors.Info;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView.Location = new System.Drawing.Point(218, 91);
+            this.gridView.Location = new System.Drawing.Point(144, 73);
             this.gridView.Name = "gridView";
             this.gridView.ReadOnly = true;
             this.gridView.RowTemplate.Height = 24;
-            this.gridView.Size = new System.Drawing.Size(345, 310);
+            this.gridView.Size = new System.Drawing.Size(582, 365);
             this.gridView.TabIndex = 1;
             // 
             // SalesOutputForAProduct

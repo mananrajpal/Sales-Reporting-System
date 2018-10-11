@@ -16,9 +16,9 @@ namespace phpsreps
 
         public SalesOutputForAProduct(List<List<String>> salesrecord)
         {
+             InitializeComponent();
             _salesrecord = salesrecord;
             SetDataGridRecord();
-            InitializeComponent();
         }
 
         private void SetDataGridRecord()
