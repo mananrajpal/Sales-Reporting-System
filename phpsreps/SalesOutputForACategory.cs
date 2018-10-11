@@ -24,13 +24,14 @@ namespace phpsreps
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Product Id");
+            dt.Columns.Add("Category");
             dt.Columns.Add("Sales Id");
             dt.Columns.Add("Quantity");
             dt.Columns.Add("Total Cost");
 
             for (int i = 0; i < _salesrecord.Count; i++)
             {
-                dt.Rows.Add(_salesrecord[i][0], _salesrecord[i][1], _salesrecord[i][2], _salesrecord[i][3]);
+                dt.Rows.Add(_salesrecord[i][0], _salesrecord[i][1], _salesrecord[i][2], _salesrecord[i][3], _salesrecord[i][4]);
             }
             gridView.DataSource = dt;
         }
