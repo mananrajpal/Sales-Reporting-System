@@ -36,7 +36,6 @@ namespace phpsreps
 
 
 
-
             //DBConnect.Session.Close(); // safely close the connection to the database.
         }
     }

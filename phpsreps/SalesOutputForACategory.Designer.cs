@@ -49,18 +49,18 @@
             this.gridView.AllowUserToDeleteRows = false;
             this.gridView.BackgroundColor = System.Drawing.SystemColors.Info;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridView.Location = new System.Drawing.Point(127, 92);
+            this.gridView.Location = new System.Drawing.Point(69, 92);
             this.gridView.Name = "gridView";
             this.gridView.ReadOnly = true;
             this.gridView.RowTemplate.Height = 24;
-            this.gridView.Size = new System.Drawing.Size(535, 310);
+            this.gridView.Size = new System.Drawing.Size(713, 440);
             this.gridView.TabIndex = 2;
             // 
             // SalesOutputForACategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(847, 569);
             this.Controls.Add(this.gridView);
             this.Controls.Add(this.label1);
             this.Name = "SalesOutputForACategory";
