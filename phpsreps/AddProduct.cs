@@ -105,10 +105,10 @@ namespace phpsreps
                 errorprovider.SetError(in_stockTextBox, MessageBox.Show("Stock Count can only be positive", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
             }
-            else if (!(category_codeTextBox.Text.Equals(Category.Beauty)) || !(category_codeTextBox.Text.Equals(Category.FirstAid)) || !(category_codeTextBox.Text.Equals(Category.Medicines)))
+            else if (!((category_codeTextBox.Text.Equals(Category.Beauty.ToString())) || (category_codeTextBox.Text.Equals(Category.FirstAid.ToString())) || (category_codeTextBox.Text.Equals(Category.Medicines.ToString())) || (category_codeTextBox.Text.Equals(Category.PersonalCare.ToString())) || (category_codeTextBox.Text.Equals(Category.Supplements.ToString()))))
             {
                 category_codeTextBox.Focus();
-                errorprovider.SetError(category_codeTextBox, MessageBox.Show("Category can only be Beauty, FirstAid or Medicines", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                errorprovider.SetError(category_codeTextBox, MessageBox.Show("Category can only be Beauty, FirstAid, PersonalCare, Supplements or  Medicines", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 return false;
             }
             else if (CheckCompanyCode() == false)
@@ -125,9 +125,11 @@ namespace phpsreps
 
         private Boolean CheckCompanyCode()
         {
+            
             for (int i = 0; i < CompanyList.companies.Count; i++)
             {
-                if (CompanyList.companies[i].CompanyID.Equals(company_idTextBox.Text))
+                Console.WriteLine(CompanyList.companies[i].CompanyID.ToString() + " " +  company_idTextBox.Text);
+                if (CompanyList.companies[i].CompanyID.ToString().Equals(company_idTextBox.Text.ToString()))
                 {
                     return true;
                 }

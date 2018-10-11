@@ -30,6 +30,7 @@ namespace phpsreps
         {
             for (int i = 0; i < ProductList.products.Count; i++)
             {
+                Console.WriteLine(ProductList.products[i].ProductCode.ToString());
                 if (ProductList.products[i].ProductCode.Equals(ProductId.Text.ToString()))
                 {
                     return true;
