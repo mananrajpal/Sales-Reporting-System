@@ -129,7 +129,7 @@ namespace phpsreps
             for (int i = 0; i < CompanyList.companies.Count; i++)
             {
                 Console.WriteLine(CompanyList.companies[i].CompanyID.ToString() + " " +  company_idTextBox.Text);
-                if (CompanyList.companies[i].CompanyID.ToString().Equals(company_idTextBox.Text.ToString()))
+                if (CompanyList.companies[i].CompanyID.Trim().ToString().Equals(company_idTextBox.Text.ToString()))
                 {
                     return true;
                 }
