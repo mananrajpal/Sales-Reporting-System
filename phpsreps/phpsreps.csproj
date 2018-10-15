@@ -64,6 +64,11 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="phpsalesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phpsalesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="phpsrepsDataSet.cs">
       <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
     </Compile>
@@ -76,6 +81,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>phpsrepsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PointOfSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointOfSales.Designer.cs">
+      <DependentUpon>PointOfSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductList.cs" />
@@ -127,6 +138,9 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PointOfSales.resx">
+      <DependentUpon>PointOfSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,6 +162,17 @@
     <EmbeddedResource Include="SalesOutputForAProduct.resx">
       <DependentUpon>SalesOutputForAProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="phpsalesDataSet.xsc">
+      <DependentUpon>phpsalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phpsalesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phpsalesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phpsalesDataSet.xss">
+      <DependentUpon>phpsalesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="phpsrepsDataSet.xsc">
       <DependentUpon>phpsrepsDataSet.xsd</DependentUpon>
     </None>

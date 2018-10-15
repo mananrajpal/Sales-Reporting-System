@@ -9,6 +9,20 @@ namespace phpsreps
         public static List<Product> products = new List<Product>();
 
         /// <summary>
+        /// Removes bad characters from a query.
+        /// </summary>
+        /// <param name="dirtyString"></param>
+        public static string CleanString(string dirtyString)
+        {
+            HashSet<char> removeChars = new HashSet<char>(" ?&^$#@!()+-,:;<>’\'-_*");
+            StringBuilder result = new StringBuilder(dirtyString.Length);
+            foreach (char c in dirtyString)
+                if (!removeChars.Contains(c)) // prevent dirty chars
+                    result.Append(c);
+            return result.ToString();
+        }
+        
+        /// <summary>
         /// Updates the internal product list from the DB.
         /// </summary>
         public static void UpdateProducts()
@@ -22,22 +36,24 @@ namespace phpsreps
             while (reader.Read())
             {
                 Product p = new Product(
-                    reader.GetString(0),
-                    reader.GetString(1),
-                    reader.GetString(2),
-                    reader.GetString(3),
-                    reader.GetDecimal(4).ToString(),
-                    reader.GetDecimal(5).ToString(),
-                    reader.GetInt16(6).ToString());
+                    CleanString(reader.GetString(0)),
+                    CleanString(reader.GetString(1)),
+                    CleanString(reader.GetString(2)),
+                    CleanString(reader.GetString(3)),
+                    CleanString(reader.GetDecimal(4).ToString()),
+                    CleanString(reader.GetDecimal(5).ToString()),
+                    CleanString(reader.GetInt16(6).ToString()));
 
                 products.Add(p);
-
             }
 
             reader.Close();
 
         }
 
+        /// <summary>
+        /// Creates a query string.
+        /// </summary>
         private static string DBProductQueryString()
         {
             StringBuilder tSqlQueryString = new StringBuilder();
@@ -51,7 +67,7 @@ namespace phpsreps
         }
 
         // method to lookup a pass code.
-        public static Product SearchForPorduct(string pCode)
+        public static Product SearchForProduct(string pCode)
         {
             foreach (Product p in products)
             {
@@ -76,10 +92,10 @@ namespace phpsreps
 
             while (reader.Read())
             {
-                string p = reader.GetString(0);
-                string s = reader.GetInt32(1).ToString();
-                string q = reader.GetInt16(2).ToString();
-                string tc = reader.GetDecimal(3).ToString();
+                string p = CleanString(reader.GetString(0));
+                string s = CleanString(reader.GetInt32(1).ToString());
+                string q = CleanString(reader.GetInt16(2).ToString());
+                string tc = CleanString(reader.GetDecimal(3).ToString());
 
                 List<string> line = new List<string>();
 
@@ -127,11 +143,11 @@ namespace phpsreps
 
             while (reader.Read())
             {
-                string p = reader.GetString(0);
-                string c = reader.GetString(1);
-                string s = reader.GetInt32(2).ToString();
-                string q = reader.GetInt16(3).ToString();
-                string tc = reader.GetDecimal(4).ToString();
+                string p = CleanString(reader.GetString(0));
+                string c = CleanString(reader.GetString(1));
+                string s = CleanString(reader.GetInt32(2).ToString());
+                string q = CleanString(reader.GetInt16(3).ToString());
+                string tc = CleanString(reader.GetDecimal(4).ToString());
 
                 List<string> line = new List<string>();
 
@@ -160,8 +176,8 @@ namespace phpsreps
 
             while (reader.Read())
             {
-                string c = reader.GetString(0);
-                string tc = reader.GetString(1);
+                string c = CleanString(reader.GetString(0));
+                string tc = CleanString(reader.GetString(1));
 
                 List<string> line = new List<string>();
 
