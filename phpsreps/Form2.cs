@@ -55,6 +55,7 @@ namespace phpsreps
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,6 +118,7 @@ namespace phpsreps
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.SystemColors.Info;
 			this.label1.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(349, 38);
 			this.label1.Name = "label1";
@@ -186,42 +188,49 @@ namespace phpsreps
 			this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "Product_Code";
 			this.productCodeDataGridViewTextBoxColumn.HeaderText = "Product_Code";
 			this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
+			this.productCodeDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// categoryDataGridViewTextBoxColumn
 			// 
 			this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
 			this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
 			this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+			this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// productNameDataGridViewTextBoxColumn
 			// 
 			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
 			this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
 			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// companyIDDataGridViewTextBoxColumn
 			// 
 			this.companyIDDataGridViewTextBoxColumn.DataPropertyName = "Company_ID";
 			this.companyIDDataGridViewTextBoxColumn.HeaderText = "Company_ID";
 			this.companyIDDataGridViewTextBoxColumn.Name = "companyIDDataGridViewTextBoxColumn";
+			this.companyIDDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// costPriceDataGridViewTextBoxColumn
 			// 
 			this.costPriceDataGridViewTextBoxColumn.DataPropertyName = "Cost_Price";
 			this.costPriceDataGridViewTextBoxColumn.HeaderText = "Cost_Price";
 			this.costPriceDataGridViewTextBoxColumn.Name = "costPriceDataGridViewTextBoxColumn";
+			this.costPriceDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// retailPriceDataGridViewTextBoxColumn
 			// 
 			this.retailPriceDataGridViewTextBoxColumn.DataPropertyName = "Retail_Price";
 			this.retailPriceDataGridViewTextBoxColumn.HeaderText = "Retail_Price";
 			this.retailPriceDataGridViewTextBoxColumn.Name = "retailPriceDataGridViewTextBoxColumn";
+			this.retailPriceDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// inStockDataGridViewTextBoxColumn
 			// 
 			this.inStockDataGridViewTextBoxColumn.DataPropertyName = "InStock";
 			this.inStockDataGridViewTextBoxColumn.HeaderText = "InStock";
 			this.inStockDataGridViewTextBoxColumn.Name = "inStockDataGridViewTextBoxColumn";
+			this.inStockDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// productsBindingSource
 			// 
@@ -252,6 +261,8 @@ namespace phpsreps
 			// Form2
 			// 
 			this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(833, 511);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.dataGridView1);
