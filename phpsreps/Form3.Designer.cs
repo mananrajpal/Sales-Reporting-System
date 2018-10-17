@@ -35,12 +35,14 @@
 			this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.phpsrepsDataSet1 = new phpsreps.phpsrepsDataSet1();
-			this.salesTableAdapter = new phpsreps.phpsrepsDataSet1TableAdapters.salesTableAdapter();
 			this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.saleDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.saleCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.phpsrepsDataSet1 = new phpsreps.phpsrepsDataSet1();
+			this.salesTableAdapter = new phpsreps.phpsrepsDataSet1TableAdapters.salesTableAdapter();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
@@ -82,10 +84,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(360, 61);
+			this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(359, 36);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(74, 27);
+			this.label1.Size = new System.Drawing.Size(83, 31);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Sales";
 			// 
@@ -100,24 +102,10 @@
             this.saleDateDataGridViewTextBoxColumn,
             this.saleCostDataGridViewTextBoxColumn});
 			this.dataGridView1.DataSource = this.salesBindingSource;
-			this.dataGridView1.Location = new System.Drawing.Point(44, 133);
+			this.dataGridView1.Location = new System.Drawing.Point(44, 149);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(743, 338);
 			this.dataGridView1.TabIndex = 2;
-			// 
-			// salesBindingSource
-			// 
-			this.salesBindingSource.DataMember = "sales";
-			this.salesBindingSource.DataSource = this.phpsrepsDataSet1;
-			// 
-			// phpsrepsDataSet1
-			// 
-			this.phpsrepsDataSet1.DataSetName = "phpsrepsDataSet1";
-			this.phpsrepsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// salesTableAdapter
-			// 
-			this.salesTableAdapter.ClearBeforeFill = true;
 			// 
 			// iDDataGridViewTextBoxColumn
 			// 
@@ -141,12 +129,52 @@
 			this.saleCostDataGridViewTextBoxColumn.Name = "saleCostDataGridViewTextBoxColumn";
 			this.saleCostDataGridViewTextBoxColumn.Width = 233;
 			// 
+			// salesBindingSource
+			// 
+			this.salesBindingSource.DataMember = "sales";
+			this.salesBindingSource.DataSource = this.phpsrepsDataSet1;
+			// 
+			// phpsrepsDataSet1
+			// 
+			this.phpsrepsDataSet1.DataSetName = "phpsrepsDataSet1";
+			this.phpsrepsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// salesTableAdapter
+			// 
+			this.salesTableAdapter.ClearBeforeFill = true;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+			this.button1.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(223, 95);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(156, 30);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "Sales for a Category";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+			this.button2.Font = new System.Drawing.Font("Kristen ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(443, 95);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(156, 30);
+			this.button2.TabIndex = 4;
+			this.button2.Text = "Sales for a Product";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.ClientSize = new System.Drawing.Size(833, 511);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.menuStrip1);
@@ -179,5 +207,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn saleDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn saleCostDataGridViewTextBoxColumn;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
 	}
 }
