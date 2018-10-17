@@ -33,7 +33,30 @@ namespace phpsreps
 		{
 			//This line of code loads data into the 'phpsrepsDataSet1.sales' table. You can move, or remove it, as needed.
 			this.salesTableAdapter.Fill(this.phpsrepsDataSet1.sales);
+		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			SalesForACategory saleCat = new SalesForACategory();
+			saleCat.Show();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			SalesForAProduct saleProduct = new SalesForAProduct();
+			saleProduct.Show();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			SalesOutputForACategory saleOutputCat = new SalesOutputForACategory();
+			saleOutputCat.Show();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			SalesOutputForAProduct saleOutputProduct = new SalesOutputForAProduct();
+			saleOutputProduct.Show();
 		}
 	}
 }
