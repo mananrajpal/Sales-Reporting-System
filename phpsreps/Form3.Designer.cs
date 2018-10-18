@@ -44,10 +44,15 @@
 			this.salesTableAdapter = new phpsreps.phpsrepsDataSet1TableAdapters.salesTableAdapter();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
+			this.phpsrepsDataSet2 = new phpsreps.phpsrepsDataSet2();
+			this.salesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.salesTableAdapter1 = new phpsreps.phpsrepsDataSet2TableAdapters.salesTableAdapter();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -103,7 +108,7 @@
             this.iDDataGridViewTextBoxColumn,
             this.saleDateDataGridViewTextBoxColumn,
             this.saleCostDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.salesBindingSource;
+			this.dataGridView1.DataSource = this.salesBindingSource1;
 			this.dataGridView1.Location = new System.Drawing.Point(44, 149);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(743, 338);
@@ -169,6 +174,20 @@
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// phpsrepsDataSet2
+			// 
+			this.phpsrepsDataSet2.DataSetName = "phpsrepsDataSet2";
+			this.phpsrepsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// salesBindingSource1
+			// 
+			this.salesBindingSource1.DataMember = "sales";
+			this.salesBindingSource1.DataSource = this.phpsrepsDataSet2;
+			// 
+			// salesTableAdapter1
+			// 
+			this.salesTableAdapter1.ClearBeforeFill = true;
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +211,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.phpsrepsDataSet2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -213,5 +234,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn saleCostDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private phpsrepsDataSet2 phpsrepsDataSet2;
+		private System.Windows.Forms.BindingSource salesBindingSource1;
+		private phpsrepsDataSet2TableAdapters.salesTableAdapter salesTableAdapter1;
 	}
 }

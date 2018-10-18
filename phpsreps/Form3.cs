@@ -31,10 +31,13 @@ namespace phpsreps
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'phpsrepsDataSet2.sales' table. You can move, or remove it, as needed.
+			
 			phpsrepsDataSet1.sales.Clear();
 			phpsrepsDataSet1.EnforceConstraints = false;
+			this.salesTableAdapter1.Fill(this.phpsrepsDataSet2.sales);
 			//This line of code loads data into the 'phpsrepsDataSet1.sales' table. You can move, or remove it, as needed.
-			this.salesTableAdapter.Fill(this.phpsrepsDataSet1.sales);
+			//this.salesTableAdapter.Fill(this.phpsrepsDataSet1.sales);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
