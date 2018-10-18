@@ -38,6 +38,14 @@ namespace phpsreps
 			form2.Show();
 		}
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPointOfSales pos = new frmPointOfSales();
+            pos.Show();
+
+        }
+
 		private void label1_Click(object sender, EventArgs e)
 		{
 

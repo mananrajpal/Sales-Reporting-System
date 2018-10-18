@@ -19,24 +19,23 @@ namespace phpsreps
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DBConnect.Session.Open();
+            DBConnect.Session.Open(); // open the connection with the database
 
-            //ProductList.UpdateProducts();
-            //CompanyList.UpdateCompanies();
+            // Populate the internal product and companies listings
+            ProductList.UpdateProducts(); 
+            CompanyList.UpdateCompanies();
 
-            DataExport.ExportProducts();
-            DataExport.ExportCompanies();
-            DataExport.ExportSales("2010-10-10", "2018-10-10");
-
-            //long time1 = DateTime.Now.Ticks;
-            //MessageBox.Show(time1.ToString());
-            //Application.Run(new frmPointOfSales()); // run the main program form.
             Application.Run(new Form1()); // run the main program form.
+
+            #region Testing Single Forms
+
+            //Application.Run(new frmPointOfSales()); // run the main program form.
+
             //Application.Run(new SalesForACategory());
 
+            #endregion
 
-
-            //DBConnect.Session.Close(); // safely close the connection to the database.
+            DBConnect.Session.Close(); // safely close the connection to the database.
         }
     }
 
