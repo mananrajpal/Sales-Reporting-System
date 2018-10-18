@@ -17,7 +17,73 @@ namespace phpsreps
             company_id, cost_price, retail_price, in_stock;
         private ErrorProvider errorprovider;
         private String _regexfordecimal, _regexforstock;
-        private Product product;
+
+		private void in_stockTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label7_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void retail_priceTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void cost_priceTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void company_idTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void product_nameTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void category_codeTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void product_codeTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private Product product;
 
         public AddProduct()
         {

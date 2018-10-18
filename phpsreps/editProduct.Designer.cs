@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editProduct));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -50,10 +51,11 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.BackColor = System.Drawing.SystemColors.Info;
+			this.label1.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(187, 37);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(91, 23);
+			this.label1.Size = new System.Drawing.Size(109, 24);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Edit item";
 			this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,6 +63,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.BackColor = System.Drawing.SystemColors.Info;
 			this.label2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(58, 98);
 			this.label2.Name = "label2";
@@ -72,6 +75,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.SystemColors.Info;
 			this.label8.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.Location = new System.Drawing.Point(58, 353);
 			this.label8.Name = "label8";
@@ -122,6 +126,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.BackColor = System.Drawing.SystemColors.Info;
 			this.label3.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.Location = new System.Drawing.Point(58, 143);
 			this.label3.Name = "label3";
@@ -132,6 +137,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.BackColor = System.Drawing.SystemColors.Info;
 			this.label4.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(58, 181);
 			this.label4.Name = "label4";
@@ -142,6 +148,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.SystemColors.Info;
 			this.label5.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(58, 223);
 			this.label5.Name = "label5";
@@ -152,6 +159,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
+			this.label6.BackColor = System.Drawing.SystemColors.Info;
 			this.label6.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(58, 267);
 			this.label6.Name = "label6";
@@ -162,6 +170,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
+			this.label7.BackColor = System.Drawing.SystemColors.Info;
 			this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(58, 311);
 			this.label7.Name = "label7";
@@ -214,6 +223,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(464, 496);
 			this.Controls.Add(this.retail_price);
 			this.Controls.Add(this.cost_price);
