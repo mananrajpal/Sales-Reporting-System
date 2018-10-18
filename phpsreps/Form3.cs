@@ -31,6 +31,8 @@ namespace phpsreps
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
+			phpsrepsDataSet1.sales.Clear();
+			phpsrepsDataSet1.EnforceConstraints = false;
 			//This line of code loads data into the 'phpsrepsDataSet1.sales' table. You can move, or remove it, as needed.
 			this.salesTableAdapter.Fill(this.phpsrepsDataSet1.sales);
 		}
