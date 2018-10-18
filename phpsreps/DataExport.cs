@@ -101,11 +101,11 @@ namespace phpsreps
 
             while (reader.Read())
             {
-                if(!salesToCSV.ContainsKey(reader.GetInt32(0).ToString()))
+                string key = reader.GetInt32(0).ToString();
+                if (!salesToCSV.ContainsKey(key))
                 {
-                    string key = reader.GetInt32(0).ToString();
                     salesToCSV.Add(key, new Dictionary<string, string>(saleDetails));
-                    salesToCSV[key]["SaleID"] = reader.GetInt32(1).ToString();
+                    salesToCSV[key]["SaleID"] = reader.GetInt64(1).ToString();
                     salesToCSV[key]["SaleDate"] = reader.GetDateTime(2).ToString();
                     salesToCSV[key]["ProductID"] = reader.GetString(3);
                     salesToCSV[key]["QuantitySold"] = reader.GetInt16(4).ToString();
