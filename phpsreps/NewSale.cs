@@ -25,9 +25,9 @@ namespace phpsreps
         /// <summary>
         /// Adds an item line to the sale.
         /// </summary>
-        public void NewItem(string pCode, string pName, string qty, string iCost)
+        public void NewItem(string pCode, string qty, string iCost, string total)
         {
-            items.Add(new NewItemLine(pCode, pName, qty, iCost));
+            items.Add(new NewItemLine(pCode, qty, iCost, total));
         }
 
         /// <summary>
@@ -45,7 +45,6 @@ namespace phpsreps
         public void InsertSale()
         {
 
-            float saleTotal = 0f;
             foreach (NewItemLine i in items)
             {
                 saleTotal += i.LineCost;
@@ -70,10 +69,12 @@ namespace phpsreps
             StringBuilder saleInsert = new StringBuilder();
 
             saleInsert.AppendFormat(@"
-                -- new sales line
+                -- new sales 
+                SET IDENTITY_INSERT dbo.Sales ON
                 INSERT INTO dbo.sales (ID, Sale_Date, Sale_Cost)
-                VLAUES ({0}, CONVERT(VARCHAR(10),GETDATE(),103), {1});
-                ", saleIDStamp, saleTotal
+                VALUES ({0}, CONVERT(VARCHAR(10),GETDATE(),112), {1});
+                SET IDENTITY_INSERT dbo.Sales OFF
+                ", saleIDStamp.ToString("F0"), saleTotal.ToString("F2")
                 );
 
             return saleInsert.ToString();
@@ -92,8 +93,8 @@ namespace phpsreps
             itemInsert.AppendFormat(@"
             -- new item line
             INSERT INTO dbo.sale_items ( Sale_ID, Product_ID, Qty_Sold, Cost_Per_Item, Total_Cost)
-            VALUES ({0}, {1}, {2}, {3}, {4});
-            ", saleIDStamp.ToString(), line.ProductCode, line.Qty.ToString(), line.ItemCost.ToString(), line.LineCost.ToString() 
+            VALUES ({0}, '{1}', {2}, {3}, {4});
+            ", saleIDStamp.ToString("F0"), line.ProductCode, line.Qty.ToString("F0"), line.ItemCost.ToString("F2"), line.LineCost.ToString("F2") 
             );
 
             return itemInsert.ToString();

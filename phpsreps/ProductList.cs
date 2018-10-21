@@ -93,7 +93,7 @@ namespace phpsreps
             while (reader.Read())
             {
                 string p = CleanString(reader.GetString(0));
-                string s = CleanString(reader.GetInt32(1).ToString());
+                string s = CleanString(reader.GetInt64(1).ToString());
                 string q = CleanString(reader.GetInt16(2).ToString());
                 string tc = CleanString(reader.GetDecimal(3).ToString());
 
@@ -145,7 +145,7 @@ namespace phpsreps
             {
                 string p = CleanString(reader.GetString(0));
                 string c = CleanString(reader.GetString(1));
-                string s = CleanString(reader.GetInt32(2).ToString());
+                string s = CleanString(reader.GetInt64(2).ToString());
                 string q = CleanString(reader.GetInt16(3).ToString());
                 string tc = CleanString(reader.GetDecimal(4).ToString());
 
